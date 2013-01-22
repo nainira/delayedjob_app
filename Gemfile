@@ -19,6 +19,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'jquery-rails'
+  gem 'delayed_job_active_record'
 end
 
 
