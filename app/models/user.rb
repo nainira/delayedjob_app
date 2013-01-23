@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   after_create :send_user_mailer
 
   def send_user_mailer
-  	# UserMailer.send_mailer(self).deliver
-  	Delayed::Job.enqueue(MailerJob.new(id), run_at: Time.now + 1.minute )
+  	UserMailer.send_mailer(self).deliver
   end
 end
